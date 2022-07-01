@@ -22,9 +22,10 @@ let upload = multer({
 }).single('myFile')
 
 router.post('/', (req, res) => {
-
+  
+  //uploade into local db (inside a folder)
   upload(req, res, async (err) => {
-
+    // validate req
     if (!req.file) {
       return res.status(400).json({
         error: 'File missing'
@@ -36,13 +37,16 @@ router.post('/', (req, res) => {
         error: err.message
       })
     }
+
+    //save into database
     const file = new File({
       filename: req.file.filename,
       uuid: uuid4(),
       path: req.file.path,
       size: req.file.size
     })
-
+    
+    //response 
     const response = await file.save()
     return res.status(200).json({
       file: `${process.env.APP_BASE_URL}/files/${response.uuid}`
@@ -50,6 +54,9 @@ router.post('/', (req, res) => {
 
   })
 })
+
+//.............................................................................
+
 
 router.post('/sendmail', async (req, res) => {
 
@@ -93,7 +100,7 @@ router.post('/sendmail', async (req, res) => {
       text: `${sender} shared a file with you.`,
       html: require('../services/emailTemplate')({
         sender,
-        downloadLink: `${process.env.APP_BASE_URL}/files/${file.uuid}?source=email`,
+        downloadLink: `${process.env.APP_BASE_URL}/files/${file.uuid}`,
         size: parseInt(file.size / 1000) + ' KB',
         siteLink: process.env.APP_BASE_URL,
         expires: '24 hours'

@@ -1,6 +1,10 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
 
+// database conection 
+
+// install mongodb than mongoose.conected(url , ) than call export this function 
+
 function connectDB() {
 
   const connectionString = process.env.MONGODB_CONNECTION_URL;

@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+//how our file look in database thise is a schema 
+//structer of the document 
+// key value pare 
+
 const fileSchema = new Schema({
   filename: {
     type: String,
@@ -28,5 +32,5 @@ const fileSchema = new Schema({
 }, {
   timestamps: true
 })
-
+//here timestrape automatice create createdat and updated at 
 module.exports = mongoose.model('File', fileSchema)

@@ -172,16 +172,6 @@ module.exports = ({
                         </tbody>
                       </table>
                       <br/>
-                      <p
-                        style="font-family: sans-serif; font-size: 13px; font-weight: normal; margin: 0; margin-bottom: 15px;">
-                        If the button doesn't work, try copy the following link and paste on browser URL. <a href="http://">${downloadLink}</a> <br>The link will expire in ${expires}.</p>
-                      <p
-                        style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;">
-                        Thank you for using FileShare!</p>
-                        <br>
-                      <p
-                        style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; margin-bottom: 15px;">
-                        Regards, Mb</p>
                     </td>
                   </tr>
                 </table>
@@ -199,7 +189,7 @@ module.exports = ({
                 <td class="content-block powered-by"
                   style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; font-size: 12px; color: #999999; text-align: center;">
                   Powered by <a href="${siteLink}"
-                    style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">FileShare</a>.
+                    style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">FileShareapp</a>.
                 </td>
               </tr>
             </table>

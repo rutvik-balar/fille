@@ -3,6 +3,10 @@ const File = require('./models/file');
 const fs = require('fs');
 
 connectDB();
+// we delete file into database 
+
+//first connect db than make async function to fetch file with help of (createdat this is a attribute in db which 
+// store date whene file uplode into db using this we fatch all file 24 hour ago than run for loop apon all file and using fs module we delete file using fs.unlinksynk() than we also delete file into the database also   
 
 async function fetchData() {
   const files = await File.find({
